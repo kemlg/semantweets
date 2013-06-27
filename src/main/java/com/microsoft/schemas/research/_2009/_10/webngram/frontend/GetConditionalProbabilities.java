@@ -40,11 +40,11 @@ import com.microsoft.schemas._2003._10.serialization.arrays.ArrayOfstring;
 @XmlRootElement(name = "GetConditionalProbabilities")
 public class GetConditionalProbabilities {
 
-    @XmlElementRef(name = "authorizationToken", namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", type = JAXBElement.class, required = false)
+    @XmlElementRef(name = "authorizationToken", namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", type = JAXBElement.class)
     protected JAXBElement<String> authorizationToken;
-    @XmlElementRef(name = "modelUrn", namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", type = JAXBElement.class, required = false)
+    @XmlElementRef(name = "modelUrn", namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", type = JAXBElement.class)
     protected JAXBElement<String> modelUrn;
-    @XmlElementRef(name = "phrases", namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", type = JAXBElement.class, required = false)
+    @XmlElementRef(name = "phrases", namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", type = JAXBElement.class)
     protected JAXBElement<ArrayOfstring> phrases;
 
     /**

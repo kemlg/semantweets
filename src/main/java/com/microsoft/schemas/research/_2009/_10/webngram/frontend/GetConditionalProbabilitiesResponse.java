@@ -36,7 +36,7 @@ import com.microsoft.schemas._2003._10.serialization.arrays.ArrayOffloat;
 @XmlRootElement(name = "GetConditionalProbabilitiesResponse")
 public class GetConditionalProbabilitiesResponse {
 
-    @XmlElementRef(name = "GetConditionalProbabilitiesResult", namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", type = JAXBElement.class, required = false)
+    @XmlElementRef(name = "GetConditionalProbabilitiesResult", namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", type = JAXBElement.class)
     protected JAXBElement<ArrayOffloat> getConditionalProbabilitiesResult;
 
     /**

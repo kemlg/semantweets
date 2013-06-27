@@ -33,7 +33,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class ServiceFault {
 
-    @XmlElementRef(name = "Message", namespace = "http://schemas.microsoft.com/research/2009/10/webngram/fault", type = JAXBElement.class, required = false)
+    @XmlElementRef(name = "Message", namespace = "http://schemas.microsoft.com/research/2009/10/webngram/fault", type = JAXBElement.class)
     protected JAXBElement<String> message;
 
     /**

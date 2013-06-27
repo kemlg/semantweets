@@ -39,11 +39,11 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "GetProbability")
 public class GetProbability {
 
-    @XmlElementRef(name = "authorizationToken", namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", type = JAXBElement.class, required = false)
+    @XmlElementRef(name = "authorizationToken", namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", type = JAXBElement.class)
     protected JAXBElement<String> authorizationToken;
-    @XmlElementRef(name = "modelUrn", namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", type = JAXBElement.class, required = false)
+    @XmlElementRef(name = "modelUrn", namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", type = JAXBElement.class)
     protected JAXBElement<String> modelUrn;
-    @XmlElementRef(name = "phrase", namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", type = JAXBElement.class, required = false)
+    @XmlElementRef(name = "phrase", namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", type = JAXBElement.class)
     protected JAXBElement<String> phrase;
 
     /**

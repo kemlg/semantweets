@@ -29,10 +29,10 @@ public class ObjectFactory {
     private final static QName _GetProbabilitiesPhrases_QNAME = new QName("http://schemas.microsoft.com/research/2009/10/webngram/frontend", "phrases");
     private final static QName _GetProbabilitiesAuthorizationToken_QNAME = new QName("http://schemas.microsoft.com/research/2009/10/webngram/frontend", "authorizationToken");
     private final static QName _GetProbabilitiesModelUrn_QNAME = new QName("http://schemas.microsoft.com/research/2009/10/webngram/frontend", "modelUrn");
-    private final static QName _GetConditionalProbabilityPhrase_QNAME = new QName("http://schemas.microsoft.com/research/2009/10/webngram/frontend", "phrase");
-    private final static QName _GetProbabilitiesResponseGetProbabilitiesResult_QNAME = new QName("http://schemas.microsoft.com/research/2009/10/webngram/frontend", "GetProbabilitiesResult");
-    private final static QName _GetConditionalProbabilitiesResponseGetConditionalProbabilitiesResult_QNAME = new QName("http://schemas.microsoft.com/research/2009/10/webngram/frontend", "GetConditionalProbabilitiesResult");
     private final static QName _GetModelsResponseGetModelsResult_QNAME = new QName("http://schemas.microsoft.com/research/2009/10/webngram/frontend", "GetModelsResult");
+    private final static QName _GetProbabilityPhrase_QNAME = new QName("http://schemas.microsoft.com/research/2009/10/webngram/frontend", "phrase");
+    private final static QName _GetConditionalProbabilitiesResponseGetConditionalProbabilitiesResult_QNAME = new QName("http://schemas.microsoft.com/research/2009/10/webngram/frontend", "GetConditionalProbabilitiesResult");
+    private final static QName _GetProbabilitiesResponseGetProbabilitiesResult_QNAME = new QName("http://schemas.microsoft.com/research/2009/10/webngram/frontend", "GetProbabilitiesResult");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.microsoft.schemas.research._2009._10.webngram.frontend
@@ -152,6 +152,69 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfstring }{@code >}}
      * 
      */
+    @XmlElementDecl(namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", name = "GetModelsResult", scope = GetModelsResponse.class)
+    public JAXBElement<ArrayOfstring> createGetModelsResponseGetModelsResult(ArrayOfstring value) {
+        return new JAXBElement<ArrayOfstring>(_GetModelsResponseGetModelsResult_QNAME, ArrayOfstring.class, GetModelsResponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", name = "authorizationToken", scope = GetProbability.class)
+    public JAXBElement<String> createGetProbabilityAuthorizationToken(String value) {
+        return new JAXBElement<String>(_GetProbabilitiesAuthorizationToken_QNAME, String.class, GetProbability.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", name = "phrase", scope = GetProbability.class)
+    public JAXBElement<String> createGetProbabilityPhrase(String value) {
+        return new JAXBElement<String>(_GetProbabilityPhrase_QNAME, String.class, GetProbability.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", name = "modelUrn", scope = GetProbability.class)
+    public JAXBElement<String> createGetProbabilityModelUrn(String value) {
+        return new JAXBElement<String>(_GetProbabilitiesModelUrn_QNAME, String.class, GetProbability.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", name = "authorizationToken", scope = GetConditionalProbability.class)
+    public JAXBElement<String> createGetConditionalProbabilityAuthorizationToken(String value) {
+        return new JAXBElement<String>(_GetProbabilitiesAuthorizationToken_QNAME, String.class, GetConditionalProbability.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", name = "phrase", scope = GetConditionalProbability.class)
+    public JAXBElement<String> createGetConditionalProbabilityPhrase(String value) {
+        return new JAXBElement<String>(_GetProbabilityPhrase_QNAME, String.class, GetConditionalProbability.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", name = "modelUrn", scope = GetConditionalProbability.class)
+    public JAXBElement<String> createGetConditionalProbabilityModelUrn(String value) {
+        return new JAXBElement<String>(_GetProbabilitiesModelUrn_QNAME, String.class, GetConditionalProbability.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfstring }{@code >}}
+     * 
+     */
     @XmlElementDecl(namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", name = "phrases", scope = GetConditionalProbabilities.class)
     public JAXBElement<ArrayOfstring> createGetConditionalProbabilitiesPhrases(ArrayOfstring value) {
         return new JAXBElement<ArrayOfstring>(_GetProbabilitiesPhrases_QNAME, ArrayOfstring.class, GetConditionalProbabilities.class, value);
@@ -176,42 +239,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", name = "authorizationToken", scope = GetConditionalProbability.class)
-    public JAXBElement<String> createGetConditionalProbabilityAuthorizationToken(String value) {
-        return new JAXBElement<String>(_GetProbabilitiesAuthorizationToken_QNAME, String.class, GetConditionalProbability.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", name = "phrase", scope = GetConditionalProbability.class)
-    public JAXBElement<String> createGetConditionalProbabilityPhrase(String value) {
-        return new JAXBElement<String>(_GetConditionalProbabilityPhrase_QNAME, String.class, GetConditionalProbability.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", name = "modelUrn", scope = GetConditionalProbability.class)
-    public JAXBElement<String> createGetConditionalProbabilityModelUrn(String value) {
-        return new JAXBElement<String>(_GetProbabilitiesModelUrn_QNAME, String.class, GetConditionalProbability.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOffloat }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", name = "GetProbabilitiesResult", scope = GetProbabilitiesResponse.class)
-    public JAXBElement<ArrayOffloat> createGetProbabilitiesResponseGetProbabilitiesResult(ArrayOffloat value) {
-        return new JAXBElement<ArrayOffloat>(_GetProbabilitiesResponseGetProbabilitiesResult_QNAME, ArrayOffloat.class, GetProbabilitiesResponse.class, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOffloat }{@code >}}
      * 
      */
@@ -221,39 +248,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfstring }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOffloat }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", name = "GetModelsResult", scope = GetModelsResponse.class)
-    public JAXBElement<ArrayOfstring> createGetModelsResponseGetModelsResult(ArrayOfstring value) {
-        return new JAXBElement<ArrayOfstring>(_GetModelsResponseGetModelsResult_QNAME, ArrayOfstring.class, GetModelsResponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", name = "authorizationToken", scope = GetProbability.class)
-    public JAXBElement<String> createGetProbabilityAuthorizationToken(String value) {
-        return new JAXBElement<String>(_GetProbabilitiesAuthorizationToken_QNAME, String.class, GetProbability.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", name = "phrase", scope = GetProbability.class)
-    public JAXBElement<String> createGetProbabilityPhrase(String value) {
-        return new JAXBElement<String>(_GetConditionalProbabilityPhrase_QNAME, String.class, GetProbability.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", name = "modelUrn", scope = GetProbability.class)
-    public JAXBElement<String> createGetProbabilityModelUrn(String value) {
-        return new JAXBElement<String>(_GetProbabilitiesModelUrn_QNAME, String.class, GetProbability.class, value);
+    @XmlElementDecl(namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", name = "GetProbabilitiesResult", scope = GetProbabilitiesResponse.class)
+    public JAXBElement<ArrayOffloat> createGetProbabilitiesResponseGetProbabilitiesResult(ArrayOffloat value) {
+        return new JAXBElement<ArrayOffloat>(_GetProbabilitiesResponseGetProbabilitiesResult_QNAME, ArrayOffloat.class, GetProbabilitiesResponse.class, value);
     }
 
 }

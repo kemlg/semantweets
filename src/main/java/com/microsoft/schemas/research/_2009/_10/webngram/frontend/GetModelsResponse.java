@@ -36,7 +36,7 @@ import com.microsoft.schemas._2003._10.serialization.arrays.ArrayOfstring;
 @XmlRootElement(name = "GetModelsResponse")
 public class GetModelsResponse {
 
-    @XmlElementRef(name = "GetModelsResult", namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", type = JAXBElement.class, required = false)
+    @XmlElementRef(name = "GetModelsResult", namespace = "http://schemas.microsoft.com/research/2009/10/webngram/frontend", type = JAXBElement.class)
     protected JAXBElement<ArrayOfstring> getModelsResult;
 
     /**
