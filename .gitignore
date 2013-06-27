@@ -1,2 +1,4 @@
 target/
 classes/
+contrib/
+.DS_Store

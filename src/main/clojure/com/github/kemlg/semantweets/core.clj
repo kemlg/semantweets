@@ -7,7 +7,8 @@
 (import (org.tempuri ILookupService LookupService))
 
 (def ngram-service (-> (LookupService.) .getWSHttpBindingILookupService))
-(def ngram-model (last (into [] (. (. ngram-service getModels) getString))))
+;(def ngram-model (last (into [] (. (. ngram-service getModels) getString))))
+(def ngram-model-prefix "urn:ngram:bing-body:apr10:")
 (def auth-token "c3db7705-c676-4bfd-b918-281c1bf84c4f")
 
 ; Optimisation problem: arg max(s1,...,sm) C(d) | Sum(C(si),i=1,m)
@@ -20,7 +21,13 @@
 ; as shown in the following equation, where Pr(·) denotes
 ; the prior probability derived from Microsoft Web N-Gram service.
 (defn m-prior-probability [s]
-  (. ngram-service getProbability auth-token ngram-model (apply str (interpose " " s))))
+  {:post [(and (>= % 0.0) (<= % 1.0))]}
+  (let [ngram-model (str ngram-model-prefix (min 5 (count s)))]
+    ; (println "using model: " ngram-model)
+    (let [prob-log (. ngram-service getProbability auth-token ngram-model (apply str (interpose " " s)))
+          prob (Math/pow 10 prob-log)]
+      ; (println "prior-probability " s " = " prob)
+      prob)))
 
 (def prior-probability
   (memoize m-prior-probability))
@@ -31,14 +38,19 @@
 (defn scp [s]
   {:pre [(vector? s) (> (count s) 0)]}
   "s is a segment <w1 ...wn> (n > 1)"
+  ; (println "calculating scp of " s)
   (if (= (count s) 1)
-    (* 2 (Math/log (prior-probability s)))
+    (do
+      (let [result-single (* 2 (Math/log (prior-probability s)))]
+        ; (println "result-single: " result-single)
+        result-single))
     (let [r (range (- (count s) 1))
           sets (map #(split-segment s %) r)
           probs (map #(* (prior-probability (first %)) (prior-probability (second %))) sets)
           sum-probs (reduce + probs)
           denom (/ sum-probs (- (count s) 1))
           numer (Math/pow (prior-probability s) 2)]
+      ; (println "prob: " (prior-probability s) " numer: " numer " denom: " denom " scp: " (Math/log (/ numer denom)))
       (Math/log (/ numer denom)))))
 
 (defn length-preference [s]
@@ -68,13 +80,13 @@
 		      first)
         t (:title f)
         r (into [] (map second (re-seq #"searchmatch'\>(\S+)\</span" (:snippet f))))]
-    (println r)
+    ; (println r)
     (if (or
           (= (clojure.string/lower-case (apply str (interpose " " s))) (clojure.string/lower-case t))
           (= (clojure.string/lower-case (apply str (interpose " " s))) (clojure.string/lower-case (apply str (interpose " " r)))))
       (clojure.string/split t #" ")
       (do
-        (println (str "Warning! " s " not found in Wikipedia"))
+        ; (println (str "Warning! " s " not found in Wikipedia"))
         s))))
 
 (def correct-title (memoize m-correct-title))
@@ -107,12 +119,12 @@
 (defn wikipedia-probability [s]
   {:pre [(vector? s) (> (count s) 0)]}
   (let [hits (number-of-hits s)]
-    (println "hits:" hits)
+    ; (println "hits:" hits)
     (if (= hits 0)
       0
       (do
-        (let [bl (number-of-backlinks s)]
-          (println "backlinks: " bl)
+        (let [bl (inc (number-of-backlinks s))] ; TODO: Check if inc is adequate... it temporarily serves as a protection against the special case of orphan pages!
+          ; (println "backlinks: " bl)
           (if (> bl hits) ;; TODO: Fix this... shouldn't happen too often though.
             1
             (/ bl hits)))))))
@@ -121,9 +133,12 @@
   {:pre [(vector? s)]}
   (let [;ct (correct-title s) ; TODO: find a better way
         ct s]
-    (println s " is: " ct)
-    (println "wp: " (wikipedia-probability ct))
-    (* (length-preference ct) (Math/exp (wikipedia-probability ct)) (sigmoid (scp ct)))))
+    ;(println s " is: " ct)
+    ;(println "wp: " (wikipedia-probability ct))
+    (let [stickiness (* (length-preference ct) (Math/exp (wikipedia-probability ct)) (sigmoid (scp ct)))]
+      ; (println "Stickiness: " stickiness " length-preference: " (length-preference ct) " exp wp: " (Math/exp (wikipedia-probability ct)) 
+      ;         " sigmoid: " (sigmoid (scp ct)) " scp: " (scp ct) " ct: " ct)
+      stickiness)))
 
 (def stickiness (memoize m-stickiness))
 
@@ -199,5 +214,27 @@
 (defn sum-stickiness [l]
   (reduce + (map stickiness l)))
 
-(pmap #(vec (list % (sum-stickiness %))) (get-all-partitions (clojure.string/split "hello leo messi" #"[\p{Punct}\s]+")))
+(defn rank-segments [phrase]
+  (let [analysis (pmap #(vec (list % (sum-stickiness %))) (get-all-partitions phrase))
+        sorted-analysis (sort-by second > analysis)]
+    (first sorted-analysis)))
 
+(defn str-to-json [str]
+  (json/read-str str :key-fn keyword))
+
+(defn get-phrase [str]
+  (let [str-without-urls (clojure.string/replace str #"((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)" "")]
+    (clojure.string/split str-without-urls #"[\p{Punct}\s]+")))
+
+(defn analyze-dump [file]
+  (let [contents (map str-to-json (clojure.string/split (slurp file) #"\n"))
+        phrases (map #(get-phrase (:text %)) contents)]
+    (map rank-segments phrases)))
+
+(defn analyze-dumps [dir-name]
+  (let [directory (clojure.java.io/file dir-name)
+        files (filter #(not (.isDirectory %)) (file-seq directory))
+        file-set files]
+    (pmap analyze-dump file-set)))
+
+(analyze-dumps "contrib/")

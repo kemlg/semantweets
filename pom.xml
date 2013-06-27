@@ -118,9 +118,34 @@
 	</build>
 	<dependencies>
 		<dependency>
+			<groupId>org.glassfish.metro</groupId>
+			<artifactId>metro-runtime-impl</artifactId>
+			<version>2.2.1-1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.metro</groupId>
+			<artifactId>webservices-rt</artifactId>
+			<version>2.2.1-1</version>
+		</dependency>
+		<dependency>
 			<groupId>org.clojure</groupId>
 			<artifactId>clojure</artifactId>
 			<version>1.5.1</version>
+		</dependency>
+		<dependency>
+			<groupId>clj-http</groupId>
+			<artifactId>clj-http</artifactId>
+			<version>0.6.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.clojure</groupId>
+			<artifactId>data.json</artifactId>
+			<version>0.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>incanter</groupId>
+			<artifactId>incanter</artifactId>
+			<version>1.4.1</version>
 		</dependency>
 	</dependencies>
 </project>
