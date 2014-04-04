@@ -120,11 +120,11 @@
   {:pre [(vector? s) (> (count s) 0)]}
   (let [hits (number-of-hits s)]
     ; (println "hits:" hits)
-    (if (= hits 0)
+    (if (or (nil? hits) (= hits 0))
       0
       (do
         (let [bl (inc (number-of-backlinks s))] ; TODO: Check if inc is adequate... it temporarily serves as a protection against the special case of orphan pages!
-          ; (println "backlinks: " bl)
+          #_(println "backlinks: " bl)
           (if (> bl hits) ;; TODO: Fix this... shouldn't happen too often though.
             1
             (/ bl hits)))))))
@@ -200,12 +200,12 @@
   (some #(= (key k) %) coll))
 
 (defn get-values [m]
-  (into [] (map val m)))
+  (into [] (map val (sort-by key m))))
 
 (defn chop [elems ints]
   (let [r (range (count elems))
         s (apply hash-map (interleave r elems))]
-    (map get-values (partition-by #(is-in? ints %) s))))
+    (map get-values (partition-by #(is-in? ints %) (sort-by key s)))))
 
 (defn get-all-partitions [elems]
   (let [ints (get-all-intermediates (count elems))]
@@ -217,7 +217,7 @@
 (defn rank-segments [phrase]
   (let [analysis (pmap #(vec (list % (sum-stickiness %))) (get-all-partitions phrase))
         sorted-analysis (sort-by second > analysis)]
-    (first sorted-analysis)))
+    sorted-analysis))
 
 (defn str-to-json [str]
   (json/read-str str :key-fn keyword))
@@ -237,4 +237,5 @@
         file-set files]
     (pmap analyze-dump file-set)))
 
-(analyze-dumps "contrib/")
+#_(analyze-dumps "contrib/")
+(take 10 (rank-segments (get-phrase ["leo messi is better player than cristiano ronaldo"])))

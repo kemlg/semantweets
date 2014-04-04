@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
 	<name>semantweets</name>
-	<comment></comment>
+	<comment>framework for crawling and visualisation of heterogeneous data
+                - including social networks and semantic interpretation - regarding the activity of a city</comment>
 	<projects>
 	</projects>
 	<buildSpec>
+		<buildCommand>
+			<name>ccw.leiningen.builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 		<buildCommand>
 			<name>ccw.builder</name>
 			<arguments>
@@ -15,15 +21,10 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
-		<buildCommand>
-			<name>org.eclipse.m2e.core.maven2Builder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
 	</buildSpec>
 	<natures>
-		<nature>org.eclipse.m2e.core.maven2Nature</nature>
-		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>ccw.nature</nature>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>ccw.leiningen.nature</nature>
 	</natures>
 </projectDescription>
