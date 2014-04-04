@@ -238,4 +238,4 @@
     (pmap analyze-dump file-set)))
 
 #_(analyze-dumps "contrib/")
-(take 10 (rank-segments (get-phrase ["leo messi is better player than cristiano ronaldo"])))
+#_(take 10 (rank-segments (get-phrase ["leo messi is better player than cristiano ronaldo"])))
