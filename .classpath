@@ -1,32 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="java"/>
-	<classpathentry kind="src" path="test">
-		<attributes>
-			<attribute name="optional" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="src" path="dev-resources">
-		<attributes>
-			<attribute name="optional" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="src" path="resources">
-		<attributes>
-			<attribute name="optional" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="target/classes">
-		<attributes>
-			<attribute name="optional" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry exported="true" kind="con" path="ccw.LEININGEN_CONTAINER">
-		<attributes>
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="semantweets/target/native/macosx/x86_64"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="lib" path="/Users/sergio/Documents/Repos/semantweets/target/classes"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/glassfish/javax.annotation/3.1.1-b06/javax.annotation-3.1.1-b06.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/glassfish/metro/metro-runtime-impl/2.2.1-1/metro-runtime-impl-2.2.1-1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.1.1/jackson-dataformat-smile-2.1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/incanter/incanter-core/1.5.4/incanter-core-1.5.4.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/scilab/forge/jlatexmath/0.9.6/jlatexmath-0.9.6.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/com/sun/xml/ws/policy/2.3.1/policy-2.3.1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/net/sf/opencsv/opencsv/2.3/opencsv-2.3.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/apache/xmlbeans/xmlbeans/2.3.0/xmlbeans-2.3.0.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/clojure/math.combinatorics/0.0.3/math.combinatorics-0.0.3.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/net/sourceforge/f2j/arpack_combined_all/0.1/arpack_combined_all-0.1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/xalan/xalan/2.6.0/xalan-2.6.0.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/com/lowagie/itext/2.1.7/itext-2.1.7.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/relaxngDatatype/relaxngDatatype/20020414/relaxngDatatype-20020414.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/incanter/incanter-latex/1.5.4/incanter-latex-1.5.4.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/com/github/rwl/JKLU/1.0.0/JKLU-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/apache/poi/poi-ooxml-schemas/3.9/poi-ooxml-schemas-3.9.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/net/mikera/core.matrix/0.7.2/core.matrix-0.7.2.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/clojure-complete/clojure-complete/0.2.3/clojure-complete-0.2.3.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/incanter/incanter-zoo/1.5.4/incanter-zoo-1.5.4.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/glassfish/gmbal/gmbal-api-only/3.1.0-b001/gmbal-api-only-3.1.0-b001.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/apache/httpcomponents/httpcore/4.2.3/httpcore-4.2.3.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/jsoup/jsoup/1.7.1/jsoup-1.7.1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/javax/jws/jsr181-api/1.0-MR1/jsr181-api-1.0-MR1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/bouncycastle/bcmail-jdk14/1.38/bcmail-jdk14-1.38.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.1.1/jackson-core-2.1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/apache/poi/poi-ooxml/3.9/poi-ooxml-3.9.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/joda-time/joda-time/2.2/joda-time-2.2.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/clojure/data.json/0.2.2/data.json-0.2.2.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/clojure/core.incubator/0.1.2/core.incubator-0.1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/apache/xmlgraphics/batik-css/1.7/batik-css-1.7.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/apache/xmlgraphics/batik-ext/1.7/batik-ext-1.7.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/apache/xmlgraphics/batik-awt-util/1.7/batik-awt-util-1.7.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/glassfish/metro/xmlfilter/2.2.1-1/xmlfilter-2.2.1-1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/jline/jline/2.11/jline-2.11.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/incanter/jcommon/1.0.16/jcommon-1.0.16.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/incanter/incanter-excel/1.5.4/incanter-excel-1.5.4.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/javax/xml/soap/saaj-api/1.3.4/saaj-api-1.3.4.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/net/sourceforge/csparsej/csparsej/1.1.1/csparsej-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/clojure/java.jdbc/0.2.3/java.jdbc-0.2.3.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/incanter/incanter-charts/1.5.4/incanter-charts-1.5.4.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/javax/xml/crypto/jsr105-api/1.0.1/jsr105-api-1.0.1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/jblas/jblas/1.2.3/jblas-1.2.3.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/clojureql/clojureql/1.0.4/clojureql-1.0.4.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/glassfish/gmbal/gmbal/3.1.0-b001/gmbal-3.1.0-b001.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/incanter/incanter/1.5.4/incanter-1.5.4.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/glassfish/metro/metro-runtime-api/2.2.1-1/metro-runtime-api-2.2.1-1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/apache/httpcomponents/httpmime/4.2.2/httpmime-4.2.2.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/congomongo/congomongo/0.3.3/congomongo-0.3.3.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/com/sun/xml/bind/jaxb-impl/2.2.6/jaxb-impl-2.2.6.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/incanter/incanter-mongodb/1.5.4/incanter-mongodb-1.5.4.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/glassfish/metro/metro-commons/2.2.1-1/metro-commons-2.2.1-1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/clj-time/clj-time/0.5.0/clj-time-0.5.0.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/com/googlecode/netlib-java/netlib-java/0.9.3/netlib-java-0.9.3.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/bouncycastle/bcprov-jdk14/138/bcprov-jdk14-138.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/jvnet/mimepull/mimepull/1.8/mimepull-1.8.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/bouncycastle/bctsp-jdk14/1.38/bctsp-jdk14-1.38.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/com/sun/istack/istack-commons-runtime/2.13/istack-commons-runtime-2.13.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/apache/xmlgraphics/batik-svggen/1.7/batik-svggen-1.7.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/bouncycastle/bcmail-jdk14/138/bcmail-jdk14-138.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/crouton/crouton/0.1.1/crouton-0.1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/com/sun/xml/stream/buffer/streambuffer/1.5/streambuffer-1.5.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/net/sourceforge/parallelcolt/optimization/1.0/optimization-1.0.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/incanter/jfreechart/1.0.13-no-gnujaxp/jfreechart-1.0.13-no-gnujaxp.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/incanter/incanter-pdf/1.5.4/incanter-pdf-1.5.4.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/glassfish/metro/webservices-api/2.2.1-1/webservices-api-2.2.1-1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/com/github/rwl/BTFJ/1.0.1/BTFJ-1.0.1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/cheshire/cheshire/5.0.1/cheshire-5.0.1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/glassfish/metro/soaptcp-impl/2.2.1-1/soaptcp-impl-2.2.1-1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/glassfish/metro/webservices-rt/2.2.1-1/webservices-rt-2.2.1-1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/glassfish/external/management-api/3.0.0-b012/management-api-3.0.0-b012.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/com/sun/xml/security/jsr105-impl/1.0.2/jsr105-impl-1.0.2.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/codehaus/woodstox/woodstox-core-asl/4.1.2/woodstox-core-asl-4.1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/com/sun/xml/messaging/saaj/saaj-impl/1.3.19/saaj-impl-1.3.19.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/net/sourceforge/jtransforms/jtransforms/2.4.0/jtransforms-2.4.0.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/incanter/incanter-io/1.5.4/incanter-io-1.5.4.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/slingshot/slingshot/0.10.3/slingshot-0.10.3.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/apache/httpcomponents/httpclient/4.2.2/httpclient-4.2.2.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/com/sun/xml/fastinfoset/FastInfoset/1.2.12/FastInfoset-1.2.12.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/danlarkin/clojure-json/1.1/clojure-json-1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/javax/xml/bind/jsr173_api/1.0/jsr173_api-1.0.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/apache/xmlgraphics/batik-xml/1.7/batik-xml-1.7.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/apache/xmlgraphics/batik-util/1.7/batik-util-1.7.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/net/sourceforge/parallelcolt/parallelcolt/0.10.0/parallelcolt-0.10.0.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/glassfish/metro/metro-config-api/2.2.1-1/metro-config-api-2.2.1-1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/jvnet/staxex/stax-ex/1.7/stax-ex-1.7.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/xml-apis/xml-apis-ext/1.3.04/xml-apis-ext-1.3.04.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/com/sun/xml/txw2/txw2/20110809/txw2-20110809.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/junit/junit/4.10/junit-4.10.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/apache/xmlgraphics/batik-dom/1.7/batik-dom-1.7.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/clojure/tools.nrepl/0.2.6/tools.nrepl-0.2.6.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/glassfish/ha/ha-api/3.1.8/ha-api-3.1.8.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/incanter/incanter-sql/1.5.4/incanter-sql-1.5.4.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/swingrepl/swingrepl/1.3.0/swingrepl-1.3.0.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/glassfish/metro/wssx-api/2.2.1-1/wssx-api-2.2.1-1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/net/sourceforge/jplasma/jplasma/1.2.0/jplasma-1.2.0.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/mongodb/mongo-java-driver/2.9.3/mongo-java-driver-2.9.3.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/clojure/clojure/1.6.0/clojure-1.6.0.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/com/github/rwl/AMDJ/1.0.1/AMDJ-1.0.1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/glassfish/metro/soaptcp-api/2.2.1-1/soaptcp-api-2.2.1-1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/incanter/incanter-svg/1.5.4/incanter-svg-1.5.4.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/codehaus/woodstox/stax2-api/3.1.1/stax2-api-3.1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/javax/xml/ws/jaxws-api/2.2.8/jaxws-api-2.2.8.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/apache/poi/poi/3.9/poi-3.9.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/javax/xml/bind/jaxb-api/2.2.7/jaxb-api-2.2.7.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/net/sourceforge/jplasma/core-lapack/0.1/core-lapack-0.1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/com/sun/xml/ws/jaxws-rt/2.2.7/jaxws-rt-2.2.7.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/com/github/rwl/COLAMDJ/1.0.1/COLAMDJ-1.0.1.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/clj-http/clj-http/0.6.4/clj-http-0.6.4.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/org/bouncycastle/bcprov-jdk14/1.38/bcprov-jdk14-1.38.jar"/>
+	<classpathentry kind="lib" path="/Users/sergio/.m2/repository/clatrix/clatrix/0.3.0/clatrix-0.3.0.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
